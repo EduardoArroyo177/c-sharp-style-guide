@@ -9,6 +9,7 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 ## Table of Contents
 
 - [Nomenclature](#nomenclature)
+  + [Script Files](#script-files)
   + [Namespaces](#namespaces)
   + [Classes & Interfaces](#classes--interfaces)
   + [Methods](#methods)
@@ -35,6 +36,23 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 ## Nomenclature
 
 On the whole, naming should follow C# standards.
+
+### Script Files
+
+Script files are all __UpperCamelCase__, multiple words concatenated together,
+without
+hypens or underscores:
+
+__BAD__:
+
+```c#
+button_editor.cs
+```
+
+__GOOD__:
+
+```c#
+ButtonEditor.cs
 
 ### Namespaces
 
