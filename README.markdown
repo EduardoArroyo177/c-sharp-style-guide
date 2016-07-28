@@ -29,8 +29,6 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 - [Brace Style](#brace-style)
 - [Switch Statements](#switch-statements)
 - [Language](#language)
-- [Copyright Statement](#copyright-statement)
-- [Smiley Face](#smiley-face)
 - [Credit](#credits)
 
 
