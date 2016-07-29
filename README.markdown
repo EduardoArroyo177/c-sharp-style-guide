@@ -30,6 +30,8 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 - [Brace Style](#brace-style)
 - [Switch Statements](#switch-statements)
 - [Language](#language)
+- [Documentation] (#documentation)
+  + [Code Commenting] (#code-commenting)
 - [Credit](#credits)
 
 
@@ -380,6 +382,38 @@ __GOOD:__
 ```c#
 string color = "red";
 ```
+
+## Documentation
+
+
+### Code Commenting
+
+All comments should be written in the same language, be grammatically correct, and contain appropriate punctuation.
+
+Use __//__ or __///__ but never __/* ... */__
+
+Place the comment on a separate line, not at the end of a line of code.
+
+Begin comment text with an uppercase letter and end the comment text with a period.
+
+Insert one space between the comment delimiter __//__ and the comment text.
+
+Do not "flowerbox" comment blocks.
+
+__BAD:__
+
+```c#
+//********************************
+//Comment block
+//********************************
+```
+
+__GOOD:__
+
+```c#
+// Comment block
+```
+
 
 ## Credits
 
