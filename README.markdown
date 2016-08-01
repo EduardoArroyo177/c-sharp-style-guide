@@ -48,13 +48,13 @@ hypens or underscores:
 __BAD__:
 
 ```c#
-button_editor.cs
+image_editor.cs
 ```
 
 __GOOD__:
 
 ```c#
-ButtonEditor.cs
+ImageEditor.cs
 ```
 
 ### Namespaces
@@ -66,22 +66,22 @@ hypens or underscores:
 __BAD__:
 
 ```c#
-com.raywenderlich.fpsgame.hud.healthbar
+using unityengine.ui;
 ```
 
 __GOOD__:
 
 ```c#
-RayWenderlich.FPSGame.HUD.Healthbar
+using UnityEngine.UI;
 ```
 
 ### Classes & Interfaces
 
-Written in __UpperCamelCase__. For example `RadialSlider`. 
+Written in __UpperCamelCase__. For example `ImageEditor`. 
 
 ### Methods
 
-Public or private are written in __UpperCamelCase__. For example `DoSomething`. 
+Public or private are written in __UpperCamelCase__. For example `SetShowNativeSize`. 
 
 ### Fields
 
@@ -90,7 +90,7 @@ Written in __lowerCamelCase__.
 When having the scope of a variable, it should be written using __Hungarian notation__
 
 ```c#
-SerializedProperty m_Spacing;
+AnimBool m_ShowType;
 ```
 
 All other fields are written __lowerCamelCase__. Per Unity convention, this includes __public fields__ as well.
@@ -98,11 +98,10 @@ All other fields are written __lowerCamelCase__. Per Unity convention, this incl
 For example:
 
 ```C#
-public class MyClass {
-  public int publicField;
-  int packagePrivate;
-  private int myPrivate;
-  protected int myProtected;
+public class ImageEditor : GraphicEditor {
+  var typeEnum;
+  bool showNativeSize;
+  var newSprite;
 }
 ```
 
@@ -128,12 +127,12 @@ Parameters are written in __lowerCamelCase__.
 __BAD:__
 
 ```c#
-void doSomething(Vector3 Location)
+void SetShowNativeSize(bool Instant)
 ```
 __GOOD:__
 
 ```c#
-void doSomething(Vector3 location)
+void SetShowNativeSize(bool instant)
 ```
 
 Single character values to be avoided except for temporary looping variables.
