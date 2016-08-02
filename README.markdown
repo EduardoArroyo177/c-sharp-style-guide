@@ -31,8 +31,6 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 - [Switch Statements](#switch-statements)
 - [Language](#language)
 - [Code Sample] (#code-sample)
-- [Documentation] (#documentation)
-  + [Code Commenting] (#code-commenting)
 - [Credit](#credits)
 
 
@@ -78,17 +76,25 @@ using UnityEngine.UI;
 
 ### Classes & Interfaces
 
-Written in __UpperCamelCase__. For example `ImageEditor`. 
+Written in __UpperCamelCase__. For example:
+
+```C#
+public class ImageEditor : GraphicEditor {}
+```
 
 ### Methods
 
-Public or private are written in __UpperCamelCase__. For example `SetShowNativeSize`. 
+Public or private are written in __UpperCamelCase__. For example:
+
+```C#
+protected void SpriteGUI(){}
+```
 
 ### Fields
 
 Written in __lowerCamelCase__.
 
-When having the scope of a variable, it should be written using __Hungarian notation__
+When having the scope of a variable, it should be written using __Hungarian notation__. For example:
 
 ```c#
 AnimBool m_ShowType;
@@ -119,7 +125,6 @@ __GOOD:__
 ```c#
 private int myPrivateVariable
 ```
-
 
 ### Parameters
 
@@ -304,39 +309,44 @@ several methods.
 
 ## Brace Style
 
-Only trailing closing-braces are awarded their own line. All others appear the
-same line as preceding code:
+Both braces (opening and closing) are awarded their own line.
 
 __BAD:__
 
 ```c#
-class MyClass
-{
-  void DoSomething()
-  {
-    if (someTest)
-    {
-      // ...
+public class ImageEditor : GraphicEditor{
+	// ...
+	protected void SpriteGUI(){
+    	EditorGUI.BeginChangeCheck();
+    	EditorGUILayout.PropertyField(m_Sprite, m_SpriteContent);
+    	if (EditorGUI.EndChangeCheck()){
+    		// ...
+    	} else{
+        	// ...
+        }
     }
-    else
-    {
-      // ...
-    }
-  }
 }
 ```
 
 __GOOD:__
 
 ```c#
-class MyClass {
-  void DoSomething() {
-    if (someTest) {
-      // ...
-    } else {
-      // ...
+public class ImageEditor : GraphicEditor
+{
+	// ...
+	protected void SpriteGUI()
+    {
+    	EditorGUI.BeginChangeCheck();
+    	EditorGUILayout.PropertyField(m_Sprite, m_SpriteContent);
+    	if (EditorGUI.EndChangeCheck())
+    	{
+    		// ...
+    	}
+    	else
+    	{
+        	// ...
+        }
     }
-  }
 }
 ```
 
@@ -346,26 +356,28 @@ irrespective of the number of lines required.
 __BAD:__
 
 ```c#
-if (someTest)
-  doSomething();
-if (someTest) doSomethingElse();
+if (EditorGUI.EndChangeCheck())
+	var newSprite = m_Sprite.objectReferenceValue as Sprite;
+	
+if (newSprite.border.SqrMagnitude() > 0) m_Type.enumValueIndex = (int)Image.Type.Sliced;
 ```
 
 __GOOD:__
 
 ```c#
-if (someTest) {
-  doSomething();
+if (EditorGUI.EndChangeCheck())
+{
+	var newSprite = m_Sprite.objectReferenceValue as Sprite;
 }
-if (someTest) { doSomethingElse(); }
-```
 
+if (newSprite.border.SqrMagnitude() > 0) { m_Type.enumValueIndex = (int)Image.Type.Sliced; }
+```
 
 ## Switch Statements
 
 Switch statements fall-through by default, but this can be unintuitive. Do not use fall-through behavior. 
 
-Alway include the `default` case.
+Always include the `default` case.
 
 ## Language
 
@@ -385,7 +397,7 @@ string color = "red";
 
 ## Code Sample
 
-As an example of how the people of Unity Technologies write the code, it is shown a class from the UI code:
+As an example of how the people of Unity Technologies write the code, next it is shown a class from their UI code:
 
 ```c#
 using System.Linq;
@@ -481,37 +493,6 @@ namespace UnityEditor.UI
         }
     }
 }
-```
-
-## Documentation
-
-
-### Code Commenting
-
-All comments should be written in the same language, be grammatically correct, and contain appropriate punctuation.
-
-Use __//__ or __///__ but never __/* ... */__
-
-Place the comment on a separate line, not at the end of a line of code.
-
-Begin comment text with an uppercase letter and end the comment text with a period.
-
-Insert one space between the comment delimiter __//__ and the comment text.
-
-Do not "flowerbox" comment blocks.
-
-__BAD:__
-
-```c#
-//********************************
-//Comment block
-//********************************
-```
-
-__GOOD:__
-
-```c#
-// Comment block
 ```
 
 
