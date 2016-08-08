@@ -31,7 +31,7 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 - [Switch Statements](#switch-statements)
 - [Language](#language)
 - [Code Sample] (#code-sample)
--[Code Organization] (#code-organization)
+- [Code Organization] (#code-organization)
 - [Credit](#credits)
 
 
