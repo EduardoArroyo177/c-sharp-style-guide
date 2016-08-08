@@ -31,6 +31,7 @@ This is a guide based on the raywenderlich [C# Style Guide] (https://github.com/
 - [Switch Statements](#switch-statements)
 - [Language](#language)
 - [Code Sample] (#code-sample)
+-[Code Organization] (#code-organization)
 - [Credit](#credits)
 
 
@@ -495,6 +496,57 @@ namespace UnityEditor.UI
 }
 ```
 
+## Code Organization
+
+As a team, we also want to have a better organized code for making even easier to read a code that was written from other members from the team, so we propose an structure for this:
+
+```c#
+using UnityEngine;
+using System.Collections;
+
+public class OrganizationScript : MonoBehaviour
+{
+    //
+    // OrganizationScript
+    //
+    // structs & classes
+    //
+    // ...
+    //
+    // Variables
+    //
+    // ...
+    //
+    // Properties
+    //
+    // ...
+    //
+    // Unity
+    //
+    // ...
+    //
+    // User
+    //
+    // ...
+    //
+}
+```
+
+For the Unity MonoBehaviour functions, we also propose an order for writing them:
+
+```c#
+Awake(){}
+
+Start(){}
+
+OnEnable(){}
+
+OnDisable(){}
+
+Update(){}
+
+FixedUpdate(){}
+```
 
 ## Credits
 
