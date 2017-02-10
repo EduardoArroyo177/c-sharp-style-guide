@@ -66,13 +66,13 @@ hypens or underscores:
 __BAD__:
 
 ```c#
-using unityengine.ui;
+using Unityengine.UI;
 ```
 
 __GOOD__:
 
 ```c#
-using UnityEngine.UI;
+using unityEngine.Ui;
 ```
 
 ### Classes & Interfaces
@@ -91,17 +91,11 @@ Public or private are written in __UpperCamelCase__. For example:
 protected void SpriteGUI(){}
 ```
 
-### Fields
+### Fields / Variables
 
 Written in __lowerCamelCase__.
 
-When having the scope of a variable, it should be written using __Hungarian notation__. For example:
-
-```c#
-AnimBool m_ShowType;
-```
-
-All other fields are written __lowerCamelCase__. Per Unity convention, this includes __public fields__ as well.
+All other fields are written __lowerCamelCase__. Per Unity convention, this includes __public fields__ as well (This is for any variables that you create).
 
 For example:
 
@@ -129,7 +123,7 @@ private int myPrivateVariable
 
 ### Parameters
 
-Parameters are written in __lowerCamelCase__.
+Parameters are written in __lowerCamelCase__ and start with an underscore.
 
 __BAD:__
 
@@ -139,7 +133,7 @@ void SetShowNativeSize(bool Instant)
 __GOOD:__
 
 ```c#
-void SetShowNativeSize(bool instant)
+void SetShowNativeSize(bool _instant)
 ```
 
 Single character values to be avoided except for temporary looping variables.
